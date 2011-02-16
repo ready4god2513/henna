@@ -1,0 +1,26 @@
+<%= render :partial => 'shared/header'%>
+	
+	<div id="main">
+		<div id="banner">
+			<h1><%= @page_title || "Henna for Hope" %></h1>
+		</div>
+		
+		<%= render :partial => 'shared/flashes'%>
+		
+		<div id="content">
+			<%= yield %>
+		</div>
+		
+		<% if content_for?(:sidebar) %>
+			<div id="sidebar">
+				<%= hook :sidebar do %>
+					<%= yield :sidebar %>
+				<% end %>
+			</div>
+		<% end %>
+		<div class="clear"></div>
+	</div>
+	
+	<%= render :partial => 'shared/footer'%>
+</body>
+</html>

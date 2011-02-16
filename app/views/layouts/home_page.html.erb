@@ -1,0 +1,25 @@
+<%= render :partial => 'shared/header'%>
+	
+	<div id="landing-banners">
+		<%= link_to(image_tag("banners/behind-the-veil.png"), products_path) %>
+	</div>
+	
+	<div id="main">
+		<div id="content">
+			<%= render :partial => 'shared/flashes'%>
+		
+			<%= yield %>
+		</div>
+		<% if content_for?(:sidebar) %>
+			<div id="sidebar">
+				<%= hook :sidebar do %>
+					<%= yield :sidebar %>
+				<% end %>
+			</div>
+		<% end %>
+		<div class="clear"></div>
+	</div>
+	
+	<%= render :partial => 'shared/footer'%>
+</body>
+</html>

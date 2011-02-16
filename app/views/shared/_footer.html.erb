@@ -1,0 +1,25 @@
+<div id="footer">
+	<div class="centered-div">
+		<% if content_for?(:footer) %>
+			<div class="left">
+				<%= hook :footer do %>
+					<%= yield :footer %>
+				<% end %>
+			</div>
+		<% end %>
+		
+		<div id="quick-links" class="right">
+			<h2>Quick Links</h2>
+			<ul>
+				<li><%= link_to "Home", root_path %></li>
+				<li><%= link_to "Shop", products_path %></li>
+				<li><%= link_to "Our Story" %></li>
+				<li><%= link_to "Join Us" %></li>
+				<li><%= link_to "Contact Us" %></li>
+				<li><%= link_to "Wholesale" %></li>
+			</ul>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>   
+<%= render 'shared/google_analytics' %>

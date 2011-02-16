@@ -1,0 +1,39 @@
+@main-color: #d5732b;
+@sub-color: #5a1e0c;
+@light-color: #F2ECDC;
+@width: 960px;
+@left-width:700px;
+@sidebar-width:@width - @left-width - 50;
+
+.centered-div
+{
+	margin:0 auto;
+	width:@width;
+}
+
+.right
+{
+	float:right;
+}
+
+.left
+{
+	float:left;
+}
+
+.clear
+{
+	clear:both;
+}
+
+.gradient
+{
+	background: -moz-linear-gradient(100% 100% 90deg, @main-color, #B64119);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(@main-color), to(#B64119));
+	border:1px solid #CC6124;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	color:#fff;
+	padding:10px;
+	text-shadow: 1px 1px 1px @sub-color;
+}

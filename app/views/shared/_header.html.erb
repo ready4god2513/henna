@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<%= hook :inside_head do %>
+  <%= render :partial => 'shared/head'%>
+<% end %>
+</head>
+<body class="<%= controller.controller_name %>">
+	<div id="header">
+		<div class="right">
+			<ul id="cart-banner" class="right">
+				<% if current_order %>
+					<li id="header-total-in-cart"><%= link_to(number_to_currency(current_order.total), cart_path) %></li>
+				<% end %>
+				<li id="header-your-bag"><%= link_to "Your Account", root_path %></li>
+				<li id="header-your-accout"><%= link_to "Your Bag", cart_path %></li>
+			</ul>
+			<ul id="navigation" class="clear">
+				<li><%= link_to "Home", root_path %></li>
+				<li><%= link_to "Shop", products_path %></li>
+				<li><%= link_to "Our Story" %></li>
+				<li><%= link_to "Join Us" %></li>
+				<li><%= link_to "Contact Us" %></li>
+				<li><%= link_to "Wholesale" %></li>
+			</ul>
+		</div>
+		<div id="logo" class="left">
+			<%= link_to (image_tag "logo.png"), root_path %>
+		</div>
+		
+		<div class="clear"></div>
+	</div>
