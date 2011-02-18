@@ -72,6 +72,7 @@ body {
 #landing-banners {
   margin: 0 auto;
   width: 960px;
+  height: 365px;
 }
 body.landing #main #content { width: 600px; }
 body.landing #main #sidebar { width: 320px; }

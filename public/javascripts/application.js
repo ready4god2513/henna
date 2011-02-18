@@ -8,5 +8,9 @@
       return false;
     });
 
+	$("#landing-banners").cycle({
+		fx: "scrollLeft"
+	});
+
   });
 })(jQuery);
