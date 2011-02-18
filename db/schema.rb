@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101219201531) do
+ActiveRecord::Schema.define(:version => 20110218052406) do
 
   create_table "addresses", :force => true do |t|
     t.string   "firstname"
@@ -72,6 +72,28 @@ ActiveRecord::Schema.define(:version => 20101219201531) do
     t.datetime "updated_at"
   end
 
+  create_table "comment_types", :force => true do |t|
+    t.string   "name"
+    t.string   "applies_to"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "comments", :force => true do |t|
+    t.string   "title",            :limit => 50, :default => ""
+    t.text     "comment",                        :default => ""
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "comment_type_id"
+  end
+
+  add_index "comments", ["commentable_id"], :name => "index_comments_on_commentable_id"
+  add_index "comments", ["commentable_type"], :name => "index_comments_on_commentable_type"
+  add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
+
   create_table "configurations", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -106,6 +128,15 @@ ActiveRecord::Schema.define(:version => 20101219201531) do
     t.string   "gateway_payment_profile_id"
   end
 
+  create_table "emails", :force => true do |t|
+    t.string   "token"
+    t.text     "to"
+    t.string   "subject"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "gateways", :force => true do |t|
     t.string   "type"
     t.string   "name"
@@ -116,6 +147,17 @@ ActiveRecord::Schema.define(:version => 20101219201531) do
     t.boolean  "test_mode",   :default => true
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "inquiries", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "inquiry_type"
+    t.string   "order_no"
+    t.text     "message"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "phone_number"
   end
 
   create_table "inventory_units", :force => true do |t|
@@ -378,6 +420,25 @@ ActiveRecord::Schema.define(:version => 20101219201531) do
     t.datetime "updated_at"
   end
 
+  create_table "relation_types", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "applies_to"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "relations", :force => true do |t|
+    t.integer  "relation_type_id"
+    t.integer  "relatable_id"
+    t.string   "relatable_type"
+    t.integer  "related_to_id"
+    t.string   "related_to_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.decimal  "discount_amount",  :precision => 8, :scale => 2, :default => 0.0
+  end
+
   create_table "return_authorizations", :force => true do |t|
     t.string   "number"
     t.decimal  "amount",     :precision => 8, :scale => 2, :default => 0.0, :null => false
@@ -445,6 +506,15 @@ ActiveRecord::Schema.define(:version => 20101219201531) do
     t.integer "country_id"
   end
 
+  create_table "subscribers", :force => true do |t|
+    t.string   "token"
+    t.string   "name"
+    t.string   "email"
+    t.datetime "unsubscribed_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "tax_categories", :force => true do |t|
     t.string   "name"
     t.string   "description"
@@ -508,16 +578,16 @@ ActiveRecord::Schema.define(:version => 20101219201531) do
 
   create_table "users", :force => true do |t|
     t.string   "email"
-    t.string   "encrypted_password",   :limit => 128
-    t.string   "password_salt",        :limit => 128
+    t.string   "encrypted_password",      :limit => 128
+    t.string   "password_salt",           :limit => 128
     t.string   "remember_token"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "persistence_token"
     t.string   "reset_password_token"
     t.string   "perishable_token"
-    t.integer  "sign_in_count",                       :default => 0, :null => false
-    t.integer  "failed_attempts",                     :default => 0, :null => false
+    t.integer  "sign_in_count",                          :default => 0,     :null => false
+    t.integer  "failed_attempts",                        :default => 0,     :null => false
     t.datetime "last_request_at"
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
@@ -530,6 +600,8 @@ ActiveRecord::Schema.define(:version => 20101219201531) do
     t.string   "unlock_token"
     t.datetime "locked_at"
     t.datetime "remember_created_at"
+    t.boolean  "is_mail_list_subscriber",                :default => false, :null => false
+    t.string   "mailchimp_subscriber_id"
   end
 
   add_index "users", ["persistence_token"], :name => "index_users_on_persistence_token"
