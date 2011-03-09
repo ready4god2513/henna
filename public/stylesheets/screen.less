@@ -4,7 +4,7 @@ body
 {
 	background-color: #fff;
 	color:#282828;
-	font-family:Arial, Verdana, sans-serif;
+	font-family: Helvetica, Arial, sans-serif;
 	font-size:0.8em;
 	line-height:1.5em;
 	margin:0 auto;
@@ -157,6 +157,41 @@ body.landing
 			padding-left:10px;
 		}
 		
+		table#cart-detail
+		{
+			border-collapse:collapse;
+			
+			thead
+			{
+				tr
+				{
+					th
+					{
+						background:#f8f8f8;
+						padding:10px;
+					}
+				}
+			}
+			
+			tr
+			{
+				td
+				{
+					border-bottom:1px solid #e8e8e8;
+					border-top:1px solid #e8e8e8;
+					padding:10px;
+				}
+			}
+			
+			tr.alt
+			{
+				td
+				{
+					background:#f8f8f8;
+				}
+			}
+		}
+		
 		div.product-listing
 		{
 			text-align:center;
@@ -234,6 +269,19 @@ body.landing
 		}
 	}
 	
+	ul#payment-methods
+	{
+		margin:0;
+		padding:0;
+		
+		li
+		{
+			list-style:none;
+			margin:0;
+			padding:0;
+		}
+	}
+	
 	form
 	{
 		label
@@ -245,8 +293,8 @@ body.landing
 		
 		label.error
 		{
-			background:#f99;
-			display:inline !important;
+			background:#FFFFCC;
+			float:none !important;
 			margin:0 5px;
 			padding:5px;
 		}
@@ -259,15 +307,17 @@ body.landing
 			padding:2px;
 		}
 		
-		input[type=submit]
+		input[type=submit], .button
 		{
 			.gradient;
+			color:#fff !important;
 			cursor:pointer;
-			display:block;
-			font-size:1.2em;
+			font-size:1.1em;
 			margin:20px 0;
+			text-decoration:none;
 			text-transform:uppercase;
 		}
+		
 		
 		div.form-buttons
 		{
@@ -325,6 +375,11 @@ body.landing
 				padding:5px;
 			}
 		}
+	}
+	
+	div#subtotal
+	{
+		margin:50px 0;
 	}
 	
 	#banner

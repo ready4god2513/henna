@@ -12,13 +12,13 @@
   -moz-border-radius: 4px;
   border-radius: 4px;
   color: #ffffff;
-  padding: 10px;
+  padding: 7px;
   text-shadow: 1px 1px 1px #5a1e0c;
 }
 body {
   background-color: #ffffff;
   color: #282828;
-  font-family: Arial, Verdana, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   font-size: 0.8em;
   line-height: 1.5em;
   margin: 0 auto;
@@ -35,7 +35,7 @@ body {
   -moz-border-radius: 4px;
   border-radius: 4px;
   color: #ffffff;
-  padding: 10px;
+  padding: 7px;
   text-shadow: 1px 1px 1px #5a1e0c;
   -moz-border-radius-topleft: 0;
   border-top-left-radius: 0;
@@ -112,6 +112,17 @@ body.landing #main #sidebar { width: 320px; }
   border-left: 2px solid #e8e8e8;
   padding-left: 10px;
 }
+#main #content table#cart-detail { border-collapse: collapse; }
+#main #content table#cart-detail thead tr th {
+  background: #f8f8f8;
+  padding: 10px;
+}
+#main #content table#cart-detail tr td {
+  border-bottom: 1px solid #e8e8e8;
+  border-top: 1px solid #e8e8e8;
+  padding: 10px;
+}
+#main #content table#cart-detail tr.alt td { background: #f8f8f8; }
 #main #content div.product-listing { text-align: center; }
 #main #content div.product-listing div.single-product {
   background: rgba(230, 230, 230, 0.1);
@@ -159,14 +170,23 @@ body.landing #main #sidebar { width: 320px; }
   color: #d5732b;
   font-size: 2em;
 }
+#main ul#payment-methods {
+  margin: 0;
+  padding: 0;
+}
+#main ul#payment-methods li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 #main form label {
   color: #333333;
   font-size: 1.1em;
   font-weight: bold;
 }
 #main form label.error {
-  background: #ff9999;
-  display: inline !important;
+  background: #ffffcc;
+  float: none !important;
   margin: 0 5px;
   padding: 5px;
 }
@@ -189,12 +209,29 @@ body.landing #main #sidebar { width: 320px; }
   -moz-border-radius: 4px;
   border-radius: 4px;
   color: #ffffff;
-  padding: 10px;
+  padding: 7px;
   text-shadow: 1px 1px 1px #5a1e0c;
+  color: #ffffff !important;
   cursor: pointer;
-  display: block;
-  font-size: 1.2em;
+  font-size: 1.1em;
   margin: 20px 0;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+#main form .button {
+  background: -moz-linear-gradient(100% 100% 90deg, #d5732b, #b64119);
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#d5732b), to(#b64119));
+  border: 1px solid #cc6124;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  color: #ffffff;
+  padding: 7px;
+  text-shadow: 1px 1px 1px #5a1e0c;
+  color: #ffffff !important;
+  cursor: pointer;
+  font-size: 1.1em;
+  margin: 20px 0;
+  text-decoration: none;
   text-transform: uppercase;
 }
 #main form div.form-buttons { text-align: right; }
@@ -236,6 +273,7 @@ body.landing #main #sidebar { width: 320px; }
   font-weight: bold;
   padding: 5px;
 }
+#main div#subtotal { margin: 50px 0; }
 #main #banner {
   background: -moz-linear-gradient(100% 100% 90deg, #d5732b, #b64119);
   background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#d5732b), to(#b64119));
@@ -243,7 +281,7 @@ body.landing #main #sidebar { width: 320px; }
   -moz-border-radius: 4px;
   border-radius: 4px;
   color: #ffffff;
-  padding: 10px;
+  padding: 7px;
   text-shadow: 1px 1px 1px #5a1e0c;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
