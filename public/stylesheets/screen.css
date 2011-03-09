@@ -81,6 +81,15 @@ body.landing #main #sidebar { width: 320px; }
   width: 960px;
   min-height: 500px;
 }
+#main div#flash {
+  background: #ffffcc;
+  font-weight: bold;
+  padding: 7px;
+}
+#main div#flash p {
+  margin: 0;
+  padding: 0;
+}
 #main #content {
   border-right: 1px solid #f2ecdc;
   float: left;
