@@ -4,18 +4,18 @@
 <table class="admin-report" width="545">
 	<thead>
 		<tr>
-      		<th>Name</th>
-      		<th>Email</th>
-          <th>Phone</th>
-      		<th>Type</th>
-					<th>Order #</th>
-					<th>message</th>
-					<th></th>
-    	</tr>
-  	</thead>
-	
+			<th>Name</th>
+			<th>Email</th>
+			<th>Phone</th>
+			<th>Type</th>
+			<th>Order #</th>
+			<th>message</th>
+			<th></th>
+		</tr>
+	</thead>
+
 	<tbody>
-    	<% @inquiries.each do |inquiry| %>
+		<% @inquiries.each do |inquiry| %>
 		<tr class="<%= cycle('even', 'odd') %>">
 			<td>
 				<%= inquiry.name %>
@@ -23,9 +23,9 @@
 			<td>
 				<%= inquiry.email %>
 			</td>
-      <td>
-        <%= inquiry.phone_number %>
-      </td>
+			<td>
+				<%= inquiry.phone_number %>
+			</td>
 			<td>
 				<%= inquiry.inquiry_type %>
 			</td>
@@ -37,8 +37,8 @@
 			</td>
 			<td>
 				<%= link_to "View", object_url(inquiry) %> | 
-	      <%=link_to "Delete", object_url(inquiry), :method => :delete %>
-	     </td>
+				<%=link_to "Delete", object_url(inquiry), :method => :delete %>
+			</td>
 		</tr>
 		<% end %>
 	</tbody>

@@ -3,53 +3,53 @@
 <div id="contact_form">
 
 	<% form_for(:inquiry) do |f| %>
-    <fieldset>
-        <legend><%= t('Fill_out_the_fields_to_contact_us') %></legend>
+	<fieldset>
+		<legend><%= t('Fill_out_the_fields_to_contact_us') %></legend>
 
-        <div class="formFieldsWrapper">
+		<div class="formFieldsWrapper">
 
-        <% unless @inquiry && !@inquiry.errors.count.zero? %>
-            <%= render :partial => 'shared/contact_info' %>
-        <% else %>
-            <div class="errors">
-                <%= error_messages_for :inquiry %>
-            </div>
-        <% end %>
+			<% unless @inquiry && !@inquiry.errors.count.zero? %>
+			<%= render :partial => 'shared/contact_info' %>
+			<% else %>
+			<div class="errors">
+				<%= error_messages_for :inquiry %>
+			</div>
+			<% end %>
 
-        <p class="field">
-          <%= f.label :name, t('name') %>
-          <%= f.text_field :name, :class => 'required' %>
-        </p>
-        <p class="field">
-          <%= f.label :email, t('email') %>
-          <%= f.text_field :email, :class => 'required email' %>
-        </p>
-        <% if Spree::Config[:contact_us_ask_for_order_number] %>
-            <p class="field">
-              <%= f.label :order_no, t(:order_number) %>
-              <%= f.text_field :order_no %>
-            </p>
-        <% end %>
-        <% if Spree::Config[:contact_us_ask_for_phone] %>
-            <p class="field">
-              <%= f.label :phone, t('phone') %>
-              <%= f.text_field :name, :class => 'phone' %>
-            </p>
-        <% end %>
-        <% unless Spree::Config[:contact_us_inquiry_types].blank? %>
-            <p class="field">
-              <%= f.label :inquiry_type, t(:question_type) %>
-              <%= f.select :inquiry_type, Spree::Config[:contact_us_inquiry_types].split(',') %>
-            </p>
-        <% end %>
-        <p class="textarea_field">
-          <%= f.label :message, t('message') %>
-          <%= f.text_area :message, :class => 'required' %>
-        </p>
-        </div>
-    </fieldset>
-    <div class="form-buttons">
-        <%= submit_tag t('send_inquiry'), :class => 'send button primary' %>
-    </div>
+			<p class="field">
+				<%= f.label :name, t('name') %>
+				<%= f.text_field :name, :class => 'required' %>
+			</p>
+			<p class="field">
+				<%= f.label :email, t('email') %>
+				<%= f.text_field :email, :class => 'required email' %>
+			</p>
+			<% if Spree::Config[:contact_us_ask_for_order_number] %>
+			<p class="field">
+				<%= f.label :order_no, t(:order_number) %>
+				<%= f.text_field :order_no %>
+			</p>
+			<% end %>
+			<% if Spree::Config[:contact_us_ask_for_phone] %>
+			<p class="field">
+				<%= f.label :phone, t('phone') %>
+				<%= f.text_field :name, :class => 'phone' %>
+			</p>
+			<% end %>
+			<% unless Spree::Config[:contact_us_inquiry_types].blank? %>
+			<p class="field">
+				<%= f.label :inquiry_type, t(:question_type) %>
+				<%= f.select :inquiry_type, Spree::Config[:contact_us_inquiry_types].split(',') %>
+			</p>
+			<% end %>
+			<p class="field textarea">
+				<%= f.label :message, t('message') %>
+				<%= f.text_area :message, :class => 'required' %>
+			</p>
+		</div>
+	</fieldset>
+	<div class="form-buttons">
+		<%= submit_tag t('send_inquiry'), :class => 'send button primary' %>
+	</div>
 	<% end %>
 </div>
