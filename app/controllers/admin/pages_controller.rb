@@ -75,7 +75,7 @@ class Admin::PagesController < Admin::BaseController
     @page.destroy
 
     respond_to do |format|
-      format.html { redirect_to(admin_pages) }
+      format.html { redirect_to(admin_pages_path) }
       format.xml  { head :ok }
     end
   end

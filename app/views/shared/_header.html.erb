@@ -21,6 +21,7 @@
 				<% Page.where("navigation = ?", true).all.each do |page| %>
 					<li><%= link_to page.title, page %></li>
 				<% end %>
+				<li><%= link_to "Contact Us", new_contact_path %></li>
 			</ul>
 		</div>
 		<div id="logo" class="left">
