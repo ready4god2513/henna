@@ -1,0 +1,55 @@
+<% content_for :head do %>
+  <%= javascript_include_tag "jquery.validate.min" %>
+<% end %>
+
+<%= render :partial => 'admin/shared/configuration_menu' %>
+
+<h1><%= t('inquiries_preferences') %></h1>
+
+<% form_tag(admin_inquiries_settings_path, :method => :put, :id => :inquiries_settings_form) do -%>
+
+  <div class="yui-g">
+    <div class="yui-u first">
+      <fieldset>
+        <legend><%= t('inquiries_recipients') %></legend>
+        <p>
+          <label><%= t('inquiries_recipients_to') %></label><br />
+          <%= text_field_tag('preferences[contact_form_to]', Spree::Config[:contact_form_to], :maxlength => 256, :class => 'email') %>
+        </p>
+        <p>
+          <label><%= t('inquiries_recipients_bcc') %></label><br />
+          <%= text_field_tag('preferences[contact_form_bcc]', Spree::Config[:contact_form_bcc], :maxlength => 256, :class => 'email') %>
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend><%= t('inquiries_form_field_settings') %></legend>
+        <p>
+        <label>
+            <input name="preferences[contact_us_ask_for_order_number]" type="hidden" value="0" />
+            <%= check_box_tag('preferences[contact_us_ask_for_order_number]', "1", Spree::Config[:contact_us_ask_for_order_number]) %>&nbsp;<%= t('inquiries_ask_for_order_number') %>&nbsp;</label>
+        </p>
+        <p>
+        <label>
+            <input name="preferences[contact_us_ask_for_phone]" type="hidden" value="0" />
+            <%= check_box_tag('preferences[contact_us_ask_for_phone]', "1", Spree::Config[:contact_us_ask_for_phone]) %>&nbsp;<%= t('inquiries_ask_for_phone') %>&nbsp;</label>
+        </p>
+        <p>
+        <label>&nbsp;<%= t('inquiries_contact_types') %>&nbsp;<br /><%= text_field_tag('preferences[contact_us_inquiry_types]', Spree::Config[:contact_us_inquiry_types], :size=>44) %></label>
+        <br />
+        <span class="note"><%= t('inquiries_contact_types_help') %></span>
+        </p>
+      </fieldset>
+
+    </div>
+  </div>
+
+  <p class="form-buttons"><%= button t('save_preferences') %></p>
+
+	<script>
+    <%# TODO add validation for email list rather than simple email %>
+    $(document).ready(function(){ 
+      $("#inquiries_settings_form").validate(); 
+    });
+  </script>
+<% end -%>

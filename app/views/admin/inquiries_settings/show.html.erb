@@ -1,0 +1,25 @@
+<%= render :partial => 'admin/shared/configuration_menu' %>
+
+<h1><%= t('inquiries_preferences') %></h1>
+
+<table>
+  <tr>
+    <th scope="row"><%= t("inquiries_recipients_to") %>:</th> 
+    <td><%= Spree::Config[:contact_form_to] %></td>
+  </tr>
+  <tr>
+    <th scope="row"><%= t("inquiries_recipients_bcc") %>:</th> 
+    <td><%= Spree::Config[:contact_form_bcc] %></td>
+  </tr>
+</table>
+
+<h4><%= t("inquiries_ask_for_order_number") %>: <%= Spree::Config[:contact_us_ask_for_order_number]? t('yes') : t('no') %></h4>
+<h4><%= t("inquiries_ask_for_phone") %>: <%= Spree::Config[:contact_us_ask_for_phone]? t('yes') : t('no') %></h4>
+<% unless Spree::Config[:contact_us_inquiry_types].blank? %>
+    <h4><%= t("inquiries_contact_types") %></h4>
+    <p>
+    <%= Spree::Config[:contact_us_inquiry_types].gsub(/,/, '<br >').html_safe %>
+    </p>
+<% end %>
+
+<p><%= link_to_with_icon 'edit', t("edit"), edit_admin_inquiries_settings_path %></p>
