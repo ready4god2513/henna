@@ -230,7 +230,11 @@ a:visited {
 }
 #admin-menu ul li.selected a,
 #sub-menu ul li.selected a {
-	background-color: #0095da;
+	padding: 3px 7px;
+	margin: 0 5px;
+	background: #154e8c;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
 }
 
 #admin-menu {
@@ -239,11 +243,6 @@ a:visited {
 }
 #admin-menu ul {
 	margin:5px 0;
-}
-#admin-menu ul li.selected {
-	background: #0095da;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
 }
 
 #admin-menu ul li.selected a {
@@ -257,7 +256,6 @@ a:visited {
 
 #sub-menu ul li a {
 	padding: 3px 7px;
-	margin: 10px 5px;
 	color: #222;
 	background: none;
 }
