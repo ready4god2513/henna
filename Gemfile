@@ -8,3 +8,8 @@ gem "spree_mail", :git => "git://github.com/citrus/spree_mail.git"
 gem "spree_comments"
 gem "acts_as_commentable"
 gem "mail_chimp", ">=1.3", :git => "git://github.com/sbeam/spree-mail-chimp.git"
+gem "friendly_id", "~> 3.2.1"
+
+group :development do
+	gem "thin"
+end
