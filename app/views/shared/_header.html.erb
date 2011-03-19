@@ -18,10 +18,9 @@
 			<ul id="navigation" class="clear">
 				<li><%= link_to "Home", root_path %></li>
 				<li><%= link_to "Shop", products_path %></li>
-				<li><%= link_to "Our Story" %></li>
-				<li><%= link_to "Join Us" %></li>
-				<li><%= link_to "Contact Us" %></li>
-				<li><%= link_to "Wholesale" %></li>
+				<% Page.where("navigation = ?", true).all.each do |page| %>
+					<li><%= link_to page.title, page %></li>
+				<% end %>
 			</ul>
 		</div>
 		<div id="logo" class="left">

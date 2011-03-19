@@ -73,11 +73,11 @@ a:visited {
 	min-height: 500px;
 }
 #content a {
-	color: #3C7DFB;
+	color: #154e8c;
 }
 #content a:active,
 #content a:visited {
-	color: #3C7DFB;
+	color: #154e8c;
 }
 #content.with-sidebar {
 	background: #fff url(../../images/admin/bg/content-back.png) right top repeat-y;

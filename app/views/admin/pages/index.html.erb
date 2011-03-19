@@ -3,20 +3,16 @@
 <table>
   <tr>
     <th>Title</th>
-    <th>Body</th>
-    <th>Navigation</th>
-    <th></th>
+    <th>In Navigation</th>
     <th></th>
     <th></th>
   </tr>
 
 <% @pages.each do |page| %>
   <tr>
-    <td><%= page.title %></td>
-    <td><%= page.body %></td>
+    <td><%= link_to page.title, edit_admin_page_path(page) %></td>
     <td><%= page.navigation %></td>
     <td><%= link_to 'Show', page %></td>
-    <td><%= link_to 'Edit', edit_page_path(page) %></td>
     <td><%= link_to 'Destroy', page, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
@@ -24,4 +20,4 @@
 
 <br />
 
-<%= link_to 'New Page', new_page_path %>
+<%= link_to 'New Page', new_admin_page_path %>
