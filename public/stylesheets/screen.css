@@ -257,6 +257,13 @@ body.landing #main #sidebar { width: 320px; }
   text-decoration: none;
   text-transform: uppercase;
 }
+#main form textarea {
+  border: 1px solid #e8e8e8;
+  font-size: 1.1em;
+  height: 150px;
+  padding: 5px;
+  width: 400px;
+}
 #main form div.form-buttons { text-align: right; }
 #main form p#bzip input { width: 70px; }
 #main form p#szip input { width: 70px; }
