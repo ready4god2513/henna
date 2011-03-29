@@ -121,6 +121,20 @@ body.landing #main #sidebar { width: 320px; }
   border-left: 2px solid #e8e8e8;
   padding-left: 10px;
 }
+#main #content form {
+  background: #f8f8f8;
+  padding: 10px;
+}
+#main #content form input[type=text] {
+  font-size: 1.1em;
+  padding: 5px;
+  width: 250px;
+}
+#main #content form input[type=password] {
+  font-size: 1.1em;
+  padding: 5px;
+  width: 250px;
+}
 #main #content table#cart-detail { border-collapse: collapse; }
 #main #content table#cart-detail thead tr th {
   background: #f8f8f8;

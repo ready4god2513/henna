@@ -24,6 +24,17 @@
 <%= javascript_include_tag 'jquery.alerts/jquery.alerts.js' %>
 <%= javascript_include_tag 'jquery.autocomplete.min.js' %>
 
+<script type="text/javascript" src="/jwysiwyg/jquery.wysiwyg.js"></script>
+<script type="text/javascript">
+$(function() {
+    $("textarea").wysiwyg({
+		css: "/stylesheets/screen.css",
+		initialContent: "",
+		autoGrow: true
+	});
+});
+</script>
+<link rel="stylesheet" href="/jwysiwyg/jquery.wysiwyg.css" type="text/css"/>
 <%= stylesheet_link_tag '/javascripts/jquery.alerts/jquery.alerts.css' %>
 <%= stylesheet_link_tag '/javascripts/jquery.alerts/jquery.alerts.spree.css' %>
 <%#= stylesheet_link_tag 'jquery.autocomplete.css'
