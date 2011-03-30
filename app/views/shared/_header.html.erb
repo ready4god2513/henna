@@ -12,8 +12,11 @@
 				<% if current_order %>
 					<li id="header-total-in-cart"><%= link_to(number_to_currency(current_order.total), cart_path) %></li>
 				<% end %>
-				<li id="header-your-bag"><%= link_to "Your Account", root_path %></li>
 				<li id="header-your-accout"><%= link_to "Your Bag", cart_path %></li>
+				<% if current_user %>
+					<li id="header-your-bag"><%= link_to "Your Account", edit_user_path(current_user) %></li>
+					<li id="header-logout"><%= link_to t('logout'), destroy_user_session_path %></li>
+				<% end %>
 			</ul>
 			<ul id="navigation" class="clear">
 				<li><%= link_to "Home", root_path %></li>
