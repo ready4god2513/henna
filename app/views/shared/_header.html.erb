@@ -15,7 +15,9 @@
 				<li id="header-your-accout"><%= link_to "Your Bag", cart_path %></li>
 				<% if current_user %>
 					<li id="header-your-bag"><%= link_to "Your Account", edit_user_path(current_user) %></li>
-					<li id="header-logout"><%= link_to t('logout'), destroy_user_session_path %></li>
+					<li id="header-logout"><%= link_to "Logout", destroy_user_session_path %></li>
+				<% else %>
+					<li id="header-login"><%= link_to "Login", new_user_session_path %></li>
 				<% end %>
 			</ul>
 			<ul id="navigation" class="clear">
