@@ -36,7 +36,7 @@
   <% if @product.has_stock? || Spree::Config[:allow_backorders] %>
     <%= label_tag :quantity %>
 	<%= text_field_tag (@product.has_variants? ? :quantity : "variants[#{@product.master.id}]"),
-      1, :class => "title", :size => 3 %>
+      1, :class => "title quantity-form", :size => 3 %>
     &nbsp;
 	<%= submit_tag "Add to Cart" %>
   <% else %>

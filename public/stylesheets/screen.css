@@ -135,6 +135,8 @@ body.landing #main #sidebar { width: 320px; }
   padding: 5px;
   width: 250px;
 }
+#main #content form input.quantity-form[type=text] { width: 30px; }
+#main #content form input.line_item_quantity[type=text] { width: 30px; }
 #main #content table#cart-detail { border-collapse: collapse; }
 #main #content table#cart-detail thead tr th {
   background: #f8f8f8;
