@@ -15,7 +15,7 @@ set :application, "ama"
 require "bundler/capistrano"
 #require "thinking_sphinx/deploy/capistrano"
 
-set :stages, %w(production)
+set :stages, %w(beta)
 require 'capistrano/ext/multistage'
 
 set :user, "user"
