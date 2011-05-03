@@ -1,8 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   
-  layout "spree_application"
-  
   rescue_from ActiveRecord::RecordNotFound, with: :render_record_not_found
   rescue_from AbstractController::ActionNotFound, with: :render_404
   rescue_from NoMethodError, with: :render_500
