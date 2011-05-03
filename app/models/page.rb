@@ -3,7 +3,7 @@ class Page < ActiveRecord::Base
   
   
   def body
-    RDiscount.new(read_attribute(:description), :no_pseudo_protocols, :filter_html, :filter_styles).to_html
+    RDiscount.new(read_attribute(:body), :no_pseudo_protocols, :filter_html, :filter_styles).to_html
   end
   
 end
