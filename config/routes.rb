@@ -6,5 +6,4 @@ Henna::Application.routes.draw do
     resources :pages
   end
   
-  match "*a", :to => "errors#routing"
 end
