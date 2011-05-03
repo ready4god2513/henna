@@ -9,7 +9,7 @@ gem "spree_comments"
 gem "acts_as_commentable"
 gem "mail_chimp", ">=1.3", :git => "git://github.com/sbeam/spree-mail-chimp.git"
 gem "friendly_id", "~> 3.2.1"
-gem "ruby-mysql", "2.9.3"
+gem "ruby-mysql"
 
 group :development do
 	gem "thin"
