@@ -5,4 +5,6 @@ Henna::Application.routes.draw do
   namespace :admin do
     resources :pages
   end
+  
+  match "*a", :to => "errors#routing"
 end
