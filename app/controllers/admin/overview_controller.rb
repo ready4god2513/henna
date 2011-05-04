@@ -152,6 +152,6 @@ class Admin::OverviewController < Admin::BaseController
   end
   
   def row_count
-    params[:limit] || 5
+    params[:limit].to_i || 5
   end
 end
