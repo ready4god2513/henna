@@ -5,4 +5,5 @@ class PagesController < Spree::BaseController
     @page = Page.find(params[:id])
     @page_title = @page.title
   end
+  
 end
