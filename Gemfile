@@ -17,5 +17,5 @@ end
 
 group :development do
 	gem "thin"
-	gem "ruby-mysql"
+	gem "sqlite3-ruby", :require => "sqlite3"
 end

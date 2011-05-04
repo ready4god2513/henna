@@ -620,9 +620,9 @@ ActiveRecord::Schema.define(:version => 20110319040254) do
     t.string   "authentication_token"
     t.string   "unlock_token"
     t.datetime "locked_at"
-    t.datetime "remember_created_at"
     t.boolean  "is_mail_list_subscriber",                :default => false, :null => false
     t.string   "mailchimp_subscriber_id"
+    t.datetime "remember_created_at"
   end
 
   add_index "users", ["persistence_token"], :name => "index_users_on_persistence_token"
