@@ -72,7 +72,7 @@
 			
 			$("BODY").append(
 			  '<div id="popup_container">' +
-			    '<h1 id="popup_title"></h1>' +
+			    '<h1 id="popup_title">)%>' +
 			    '<div id="popup_content">' +
 			      '<div id="popup_message"></div>' +
 				'</div>' +

@@ -1,6 +1,6 @@
 <%= hook :admin_user_new_form_header do %>
   <%= render 'shared/error_messages', :target => @user %>
-  <h1><%= t("new_user") %></h1>
+  <% page_title( t("new_user") )%>
 <% end %>
 
 <%= hook :admin_user_new_form do %>

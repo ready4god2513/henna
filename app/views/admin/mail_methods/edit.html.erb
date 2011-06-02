@@ -1,6 +1,6 @@
 <%= render :partial => 'admin/shared/configuration_menu' %>
 
-<h1><%= t("editing_mail_method") %></h1>
+<% page_title( t("editing_mail_method") )%>
 <%= render 'shared/error_messages', :target => @mail_method %>
 
 <%= form_for(:mail_method, :url => object_url, :html => { :method => :put }) do |f| %>

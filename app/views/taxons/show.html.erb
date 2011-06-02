@@ -1,4 +1,4 @@
-<h1><%= @taxon.name %></h1>
+<% page_title( @taxon.name )%>
 
 <% content_for :sidebar do %>
   <%= hook :taxon_sidebar_navigation do %>

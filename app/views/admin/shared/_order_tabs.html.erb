@@ -1,4 +1,4 @@
-<h1><%= t(:order) + " #{@order.number}" %></h1>
+<% page_title( t(:order) + " #{@order.number}" )%>
 
 <% content_for :sidebar do %>
   <div id="order_tab_summary">

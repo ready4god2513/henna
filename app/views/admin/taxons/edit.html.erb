@@ -1,6 +1,6 @@
 <%= render :partial => 'admin/shared/configuration_menu' %>
 
-<h1><%= t("taxon_edit")%></h1>
+<% page_title( t("taxon_edit"))%>
 
 <%= form_for(:taxon, :url => admin_taxonomy_taxon_url, :html => { :method => :put, :multipart => true}) do |f| %>
   <%= render :partial => 'form', :locals => {:f => f} %>

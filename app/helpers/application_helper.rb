@@ -5,4 +5,10 @@ module ApplicationHelper
     page.body unless page.new_record?
   end
   
+  def page_title(title)
+    @page_title = capture do
+      title
+    end
+  end
+  
 end

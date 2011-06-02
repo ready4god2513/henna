@@ -1,4 +1,4 @@
-<h1><%= "#{t("comments")} #{(t('for') + " " + comments_for unless (comments_for rescue nil).nil?)}"%></h1>
+<% page_title( "#{t("comments")} #{(t('for') + " " + comments_for unless (comments_for rescue nil).nil?)}")%>
 
 <table class="index">
   <tr>

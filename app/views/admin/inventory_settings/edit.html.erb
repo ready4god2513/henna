@@ -1,6 +1,6 @@
 <%= render :partial => 'admin/shared/configuration_menu' %>
 
-<h1><%= t('inventory_settings') %></h1>
+<% page_title( t('inventory_settings') )%>
 
 <%= form_tag(admin_inventory_settings_path, :method => :put) do %>
 

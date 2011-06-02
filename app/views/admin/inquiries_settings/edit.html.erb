@@ -4,7 +4,7 @@
 
 <%= render :partial => 'admin/shared/configuration_menu' %>
 
-<h1><%= t('inquiries_preferences') %></h1>
+<% page_title( t('inquiries_preferences') )%>
 
 <% form_tag(admin_inquiries_settings_path, :method => :put, :id => :inquiries_settings_form) do -%>
 

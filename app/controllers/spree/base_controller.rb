@@ -3,7 +3,7 @@ class Spree::BaseController < ActionController::Base
   
   rescue_from ActiveRecord::RecordNotFound, with: :render_record_not_found
   rescue_from AbstractController::ActionNotFound, with: :render_404
-  rescue_from NoMethodError, with: :render_500
+  # rescue_from NoMethodError, with: :render_500
   
   
   def render_404

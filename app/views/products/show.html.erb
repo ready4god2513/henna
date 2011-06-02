@@ -1,6 +1,6 @@
 <% @body_id = 'product-details' %>
 <div id="product-details" class="right">
-	<h1><%= @product.name %></h1>
+	<% page_title( @product.name )%>
 	<div id="product-description">
 	  <%= hook :product_description do %>
 	    <%= product_description(@product) rescue t("product_has_no_description") %>
