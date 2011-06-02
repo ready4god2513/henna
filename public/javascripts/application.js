@@ -9,7 +9,8 @@
     });
 
 	$("#landing-banners").cycle({
-		fx: "scrollLeft"
+		fx: "scrollLeft",
+		timeout: 10000
 	});
 
   });
