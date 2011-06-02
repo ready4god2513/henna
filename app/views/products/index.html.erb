@@ -1,3 +1,5 @@
+<% page_title("Shop")%>
+
 <% content_for :sidebar do %>
   <%= hook :homepage_sidebar_navigation do %>
     <% if "products" == @current_controller && @taxon %>
