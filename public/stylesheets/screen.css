@@ -204,6 +204,13 @@ body.landing #main #sidebar { width: 320px; }
 #main #content div#product-details p.prices {
   color: #d5732b;
   font-size: 2em;
+  font-weight: lighter;
+  margin: 10px 0;
+  padding: 0;
+}
+#main #content div#product-details input.add-to-cart {
+  font-size: 1.3em;
+  padding: 12px 15px;
 }
 #main ul#payment-methods {
   margin: 0;
