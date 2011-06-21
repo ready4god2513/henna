@@ -1,6 +1,6 @@
 source "http://rubygems.org"
 
-gem "rails", "3.0.3"
+gem "rails", "3.0.7"
 
 gem "spree"
 gem "spree_contact_us", :git => "git://github.com/dwradcliffe/spree_contact_us.git"
