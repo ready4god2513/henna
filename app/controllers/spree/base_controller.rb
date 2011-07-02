@@ -1,5 +1,6 @@
 class Spree::BaseController < ActionController::Base
   include SpreeBase
+  include SpreeRespondWith
   
   rescue_from ActiveRecord::RecordNotFound, with: :render_record_not_found
   rescue_from AbstractController::ActionNotFound, with: :render_404

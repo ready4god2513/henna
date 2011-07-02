@@ -207,6 +207,7 @@ ActiveRecord::Schema.define(:version => 20110319040254) do
     t.string   "presentation", :limit => 100
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "position",                    :default => 0, :null => false
   end
 
   create_table "option_types_prototypes", :id => false, :force => true do |t|
@@ -519,6 +520,7 @@ ActiveRecord::Schema.define(:version => 20110319040254) do
     t.datetime "updated_at"
     t.string   "previous_state"
     t.string   "stateful_type"
+    t.string   "next_state"
   end
 
   create_table "states", :force => true do |t|
@@ -639,6 +641,7 @@ ActiveRecord::Schema.define(:version => 20110319040254) do
     t.boolean  "is_master",                                   :default => false
     t.integer  "count_on_hand",                               :default => 0,     :null => false
     t.decimal  "cost_price",    :precision => 8, :scale => 2
+    t.integer  "position"
   end
 
   add_index "variants", ["product_id"], :name => "index_variants_on_product_id"
