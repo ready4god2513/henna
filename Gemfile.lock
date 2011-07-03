@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/citrus/spree_mail.git
-  revision: 89de0a85780d0362396693d686263fec8b3025e9
+  revision: dc8a8deb0c3a477b51a6568776c56cf48ed15871
   specs:
     spree_mail (0.40.0.4)
       mail (>= 2.2.0)
