@@ -12,6 +12,7 @@ gem "friendly_id", "~> 3.2.1"
 gem "rdiscount"
 gem "spree_static_content"
 gem "spree_editor", :git => "git://github.com/romul/spree_editor.git"
+gem "formtastic", "~> 1.2.3"
 
 group :production do
 	gem "mysql2", "< 0.3"
