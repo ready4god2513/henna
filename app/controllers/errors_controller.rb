@@ -1,4 +1,4 @@
-class ErrorsController < ApplicationController
+class ErrorsController < Spree::BaseController
   
   def routing
   end

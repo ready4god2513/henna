@@ -64,6 +64,13 @@ ActiveRecord::Schema.define(:version => 20110319040254) do
   add_index "assets", ["viewable_id"], :name => "index_assets_on_viewable_id"
   add_index "assets", ["viewable_type", "type"], :name => "index_assets_on_viewable_type_and_type"
 
+  create_table "authentication_methods", :force => true do |t|
+    t.string   "environment"
+    t.boolean  "active"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "calculators", :force => true do |t|
     t.string   "type"
     t.integer  "calculable_id",   :null => false
@@ -258,11 +265,21 @@ ActiveRecord::Schema.define(:version => 20110319040254) do
   create_table "pages", :force => true do |t|
     t.string   "title"
     t.text     "body"
-    t.boolean  "navigation",  :default => false
+    t.string   "slug"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "cached_slug"
+    t.boolean  "show_in_header",   :default => false, :null => false
+    t.boolean  "show_in_footer",   :default => false, :null => false
+    t.string   "foreign_link"
+    t.integer  "position",         :default => 1,     :null => false
+    t.boolean  "visible",          :default => true
+    t.string   "meta_keywords"
+    t.string   "meta_description"
+    t.string   "layout"
+    t.boolean  "show_in_sidebar",  :default => false, :null => false
   end
+
+  add_index "pages", ["slug"], :name => "index_pages_on_slug"
 
   create_table "payment_methods", :force => true do |t|
     t.string   "type"
@@ -595,6 +612,15 @@ ActiveRecord::Schema.define(:version => 20110319040254) do
     t.string   "environment"
     t.string   "analytics_id"
     t.boolean  "active",       :default => true
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_authentications", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "nickname"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
