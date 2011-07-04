@@ -15,6 +15,7 @@ gem "friendly_id", "~> 3.2.1"
 gem "rdiscount"
 gem "spree_static_content"
 gem "spree_editor", :git => "git://github.com/romul/spree_editor.git"
+gem "spree_cms", :git => "https://github.com/gunnertech/spree-cms.git"
 
 group :production do
 	gem "mysql2", "< 0.3"

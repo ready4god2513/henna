@@ -34,9 +34,19 @@ GIT
     spree_editor (0.50.0)
       spree_core (>= 0.40.0)
 
+GIT
+  remote: https://github.com/gunnertech/spree-cms.git
+  revision: 9110937825343051485ca9a9668bf3bd043011ea
+  specs:
+    spree_cms (0.0.4)
+      RedCloth (~> 4.2.7)
+      disqus (~> 1.0.4)
+      is_taggable (~> 0.1.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
+    RedCloth (4.2.7)
     abstract (1.0.0)
     actionmailer (3.0.7)
       actionpack (= 3.0.7)
@@ -82,6 +92,8 @@ GEM
       bcrypt-ruby (~> 2.1.2)
       orm_adapter (~> 0.0.3)
       warden (~> 1.0.3)
+    disqus (1.0.4)
+      json
     dynamic_form (1.1.4)
     erubis (2.6.6)
       abstract (>= 1.0.0)
@@ -97,9 +109,11 @@ GEM
     highline (1.5.1)
     hominid (3.0.2)
     i18n (0.5.0)
+    is_taggable (0.1.0)
     jquery-rails (0.2.6)
       rails (~> 3.0)
       thor (~> 0.14.4)
+    json (1.5.3)
     mail (2.2.19)
       activesupport (>= 2.3.6)
       i18n (>= 0.4.0)
@@ -222,6 +236,7 @@ DEPENDENCIES
   rdiscount
   recaptcha
   spree
+  spree_cms!
   spree_comments
   spree_editor!
   spree_mail!

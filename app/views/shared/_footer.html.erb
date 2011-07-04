@@ -13,9 +13,6 @@
 			<ul>
 				<li><%= link_to "Home", root_path %></li>
 				<li><%= link_to "Shop", products_path %></li>
-				<% for page in Page.header_links do %>
-				     <li><%= link_to page.title, page.link %></li>
-			    <% end %>
 				<li><%= link_to "Contact Us", contact_path %></li>
 			</ul>
 			<span class="copyright">&copy; <%= Date.today.year %> Henna for Hope.  All rights reserved</span>

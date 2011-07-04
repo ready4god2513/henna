@@ -263,23 +263,21 @@ ActiveRecord::Schema.define(:version => 20110319040254) do
   add_index "orders", ["number"], :name => "index_orders_on_number"
 
   create_table "pages", :force => true do |t|
-    t.string   "title"
+    t.string   "title",            :limit => 128,                :null => false
     t.text     "body"
-    t.string   "slug"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.boolean  "show_in_header",   :default => false, :null => false
-    t.boolean  "show_in_footer",   :default => false, :null => false
-    t.string   "foreign_link"
-    t.integer  "position",         :default => 1,     :null => false
-    t.boolean  "visible",          :default => true
+    t.text     "body_raw"
+    t.integer  "is_active",                       :default => 0
+    t.string   "permalink",        :limit => 128,                :null => false
+    t.datetime "published_at"
     t.string   "meta_keywords"
     t.string   "meta_description"
-    t.string   "layout"
-    t.boolean  "show_in_sidebar",  :default => false, :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  add_index "pages", ["slug"], :name => "index_pages_on_slug"
+  add_index "pages", ["is_active", "published_at"], :name => "pages_is_active_published_at_ix"
+  add_index "pages", ["permalink"], :name => "pages_permalink_ix"
+  add_index "pages", ["published_at"], :name => "pages_published_at_ix"
 
   create_table "payment_methods", :force => true do |t|
     t.string   "type"
@@ -305,6 +303,26 @@ ActiveRecord::Schema.define(:version => 20110319040254) do
     t.string   "response_code"
     t.string   "avs_response"
   end
+
+  create_table "posts", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "title",            :limit => 128,                :null => false
+    t.text     "body"
+    t.text     "body_raw"
+    t.text     "excerpt"
+    t.integer  "is_active",                       :default => 0
+    t.string   "permalink",        :limit => 128,                :null => false
+    t.datetime "published_at"
+    t.integer  "commentable",                     :default => 0
+    t.string   "meta_keywords"
+    t.string   "meta_description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "posts", ["is_active", "published_at"], :name => "posts_is_active_published_at_ix"
+  add_index "posts", ["permalink"], :name => "posts_permalink_ix"
+  add_index "posts", ["published_at"], :name => "posts_published_at_ix"
 
   create_table "preferences", :force => true do |t|
     t.string   "name",       :limit => 100, :null => false
@@ -555,6 +573,22 @@ ActiveRecord::Schema.define(:version => 20110319040254) do
     t.datetime "updated_at"
   end
 
+  create_table "taggings", :force => true do |t|
+    t.integer "tag_id"
+    t.string  "taggable_type", :default => ""
+    t.integer "taggable_id"
+  end
+
+  add_index "taggings", ["tag_id"], :name => "index_taggings_on_tag_id"
+  add_index "taggings", ["taggable_id", "taggable_type"], :name => "index_taggings_on_taggable_id_and_taggable_type"
+
+  create_table "tags", :force => true do |t|
+    t.string "name", :default => ""
+    t.string "kind", :default => ""
+  end
+
+  add_index "tags", ["name", "kind"], :name => "index_tags_on_name_and_kind"
+
   create_table "tax_categories", :force => true do |t|
     t.string   "name"
     t.string   "description"
@@ -651,6 +685,7 @@ ActiveRecord::Schema.define(:version => 20110319040254) do
     t.boolean  "is_mail_list_subscriber",                :default => false, :null => false
     t.string   "mailchimp_subscriber_id"
     t.datetime "remember_created_at"
+    t.string   "display_name",            :limit => 200
   end
 
   add_index "users", ["persistence_token"], :name => "index_users_on_persistence_token"
