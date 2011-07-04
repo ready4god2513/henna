@@ -1,14 +1,21 @@
-/* -------------------------------------------------------------------------------------------------
+form.formtastic fieldset > ol > li.string input,
+form.formtastic fieldset > ol > li.password input,
+form.formtastic fieldset > ol > li.numeric input,
+form.formtastic fieldset > ol > li.email input,
+form.formtastic fieldset > ol > li.url input,
+form.formtastic fieldset > ol > li.phone input,
+form.formtastic fieldset > ol > li.search input {
+    width: 350px;
+}
 
-Load this stylesheet after formtastic.css in your layouts to override the CSS to suit your needs.
-This will allow you to update formtastic.css with new releases without clobbering your own changes.
+form.formtastic fieldset > ol > li.text textarea[cols] {
+    width: auto;
+    max-width: 350px;
+}
 
-For example, to make the inline hint paragraphs a little darker in color than the standard #666:
-
-form.formtastic fieldset > ol > li p.inline-hints { color:#333; }
-
-HINT:
-The following style may be *conditionally* included for improved support on older versions of IE(<8)
-form.formtastic fieldset ol li fieldset legend { margin-left: -6px;}
-
---------------------------------------------------------------------------------------------------*/
+form.formtastic abbr, form.formtastic acronym {
+    border: 0;
+    font-variant: normal;
+    color: red;
+    font-size: 15px;
+}
