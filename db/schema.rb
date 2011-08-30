@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(:version => 20110319040254) do
 
   create_table "adjustments", :force => true do |t|
     t.integer  "order_id"
-    t.decimal  "amount"
+    t.decimal  "amount",          :precision => 8, :scale => 2
     t.string   "label"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -88,7 +88,7 @@ ActiveRecord::Schema.define(:version => 20110319040254) do
 
   create_table "comments", :force => true do |t|
     t.string   "title",            :limit => 50, :default => ""
-    t.text     "comment",                        :default => ""
+    t.text     "comment"
     t.integer  "commentable_id"
     t.string   "commentable_type"
     t.integer  "user_id"
@@ -242,13 +242,13 @@ ActiveRecord::Schema.define(:version => 20110319040254) do
   create_table "orders", :force => true do |t|
     t.integer  "user_id"
     t.string   "number",               :limit => 15
-    t.decimal  "item_total",                                                       :default => 0.0, :null => false
-    t.decimal  "total",                                                            :default => 0.0, :null => false
+    t.decimal  "item_total",                         :precision => 8, :scale => 2, :default => 0.0, :null => false
+    t.decimal  "total",                              :precision => 8, :scale => 2, :default => 0.0, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "state"
-    t.decimal  "adjustment_total",                                                 :default => 0.0, :null => false
-    t.decimal  "credit_total",                                                     :default => 0.0, :null => false
+    t.decimal  "adjustment_total",                   :precision => 8, :scale => 2, :default => 0.0, :null => false
+    t.decimal  "credit_total",                       :precision => 8, :scale => 2, :default => 0.0, :null => false
     t.datetime "completed_at"
     t.integer  "bill_address_id"
     t.integer  "ship_address_id"
@@ -295,7 +295,7 @@ ActiveRecord::Schema.define(:version => 20110319040254) do
     t.integer  "order_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.decimal  "amount",            :default => 0.0, :null => false
+    t.decimal  "amount",            :precision => 8, :scale => 2, :default => 0.0, :null => false
     t.integer  "source_id"
     t.string   "source_type"
     t.integer  "payment_method_id"
@@ -326,11 +326,11 @@ ActiveRecord::Schema.define(:version => 20110319040254) do
 
   create_table "preferences", :force => true do |t|
     t.string   "name",       :limit => 100, :null => false
-    t.integer  "owner_id",   :limit => 30,  :null => false
+    t.integer  "owner_id",                  :null => false
     t.string   "owner_type", :limit => 50,  :null => false
     t.integer  "group_id"
     t.string   "group_type", :limit => 50
-    t.text     "value",      :limit => 255
+    t.text     "value"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -661,8 +661,8 @@ ActiveRecord::Schema.define(:version => 20110319040254) do
 
   create_table "users", :force => true do |t|
     t.string   "email"
-    t.string   "encrypted_password",      :limit => 128
-    t.string   "password_salt",           :limit => 128
+    t.string   "encrypted_password"
+    t.string   "password_salt"
     t.string   "remember_token"
     t.datetime "created_at"
     t.datetime "updated_at"
