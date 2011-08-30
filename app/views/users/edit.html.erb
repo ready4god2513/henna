@@ -1,7 +1,7 @@
 <%= render "shared/error_messages", :target => @user %>
 <% page_title( t("editing_user") )%>
 <br/>
-<%= form_for(:user, :url => object_url, :html => { :method => :put }) do |f| %>
+<%= form_for(@user) do |f| %>
   <%= render 'shared/user_form', :f => f %>
   <p>
     <%=submit_tag t("update") %>
