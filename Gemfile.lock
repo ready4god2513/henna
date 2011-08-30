@@ -20,15 +20,6 @@ GIT
       spree_core
 
 GIT
-  remote: git://github.com/ready4god2513/spree-cms.git.git
-  revision: cace6dde4184beed394be8dcc64f9499b571ea65
-  specs:
-    spree_cms (0.0.4)
-      RedCloth (~> 4.2.7)
-      disqus (~> 1.0.4)
-      is_taggable (~> 0.1.0)
-
-GIT
   remote: git://github.com/ready4god2513/spree-mail-chimp.git
   revision: 101766a2b85ffe4ee40d3285bec1922130e25f0c
   specs:
@@ -36,17 +27,9 @@ GIT
       hominid (>= 2.2.0)
       spree_core (>= 0.30.0)
 
-GIT
-  remote: git://github.com/romul/spree_editor.git
-  revision: b47e0e7cf5e4afaa556796b199f295d9f968c619
-  specs:
-    spree_editor (0.50.0)
-      spree_core (>= 0.40.0)
-
 GEM
   remote: http://rubygems.org/
   specs:
-    RedCloth (4.2.8)
     abstract (1.0.0)
     actionmailer (3.0.9)
       actionpack (= 3.0.9)
@@ -81,7 +64,6 @@ GEM
     acts_as_commentable (3.0.0)
     acts_as_list (0.1.2)
     arel (2.0.10)
-    babosa (0.3.5)
     bcrypt-ruby (2.1.4)
     braintree (2.11.0)
       builder (>= 2.0.0)
@@ -92,8 +74,6 @@ GEM
       bcrypt-ruby (~> 2.1.2)
       orm_adapter (~> 0.0.3)
       warden (~> 1.0.3)
-    disqus (1.0.4)
-      json
     dynamic_form (1.1.4)
     erubis (2.6.6)
       abstract (>= 1.0.0)
@@ -104,16 +84,12 @@ GEM
       actionpack (>= 2.3.7)
       activesupport (>= 2.3.7)
       i18n (~> 0.4)
-    friendly_id (3.2.1.1)
-      babosa (~> 0.3.0)
     highline (1.5.1)
     hominid (3.0.2)
     i18n (0.5.0)
-    is_taggable (0.1.0)
     jquery-rails (0.2.6)
       rails (~> 3.0)
       thor (~> 0.14.4)
-    json (1.5.3)
     mail (2.2.19)
       activesupport (>= 2.3.6)
       i18n (>= 0.4.0)
@@ -169,6 +145,11 @@ GEM
       spree_dash (= 0.60.1)
       spree_promo (= 0.60.1)
       spree_sample (= 0.60.1)
+    spree_affiliate (1.0.0)
+      spree_auth (>= 0.40.0)
+      spree_core (>= 0.40.0)
+      spree_email_to_friend (>= 1.0.0)
+      spree_store_credits (>= 1.0.0)
     spree_api (0.60.1)
       spree_auth (= 0.60.1)
       spree_core (= 0.60.1)
@@ -197,10 +178,18 @@ GEM
       will_paginate (= 3.0.pre2)
     spree_dash (0.60.1)
       spree_core (= 0.60.1)
+    spree_email_to_friend (1.0.0)
+      recaptcha (>= 0.3.1)
+      spree_auth (>= 0.30.1)
+      spree_core (>= 0.30.1)
     spree_promo (0.60.1)
       spree_core (= 0.60.1)
+    spree_related_products (3.0.2)
+      spree_core (>= 0.30.0.beta1)
     spree_sample (0.60.1)
       spree_core (= 0.60.1)
+    spree_store_credits (1.0.1)
+      spree_core (>= 0.30.1)
     sqlite3 (1.3.4)
     sqlite3-ruby (1.3.3)
       sqlite3 (>= 1.3.3)
@@ -227,15 +216,16 @@ DEPENDENCIES
   contact_us!
   dynamic_form
   formtastic
-  friendly_id (~> 3.2.1)
   mail_chimp (>= 1.3)!
   mysql2 (< 0.3)
   rails
   recaptcha
   spree (~> 0.60.1)
-  spree_cms!
+  spree_affiliate
   spree_comments
-  spree_editor!
+  spree_email_to_friend
   spree_mail!
+  spree_related_products
+  spree_store_credits
   sqlite3-ruby
   thin
