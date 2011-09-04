@@ -20,4 +20,7 @@ gem "spree_affiliate"
 group :development do
 	gem "thin"
 	gem "sqlite3-ruby", :require => "sqlite3"
+	
+	gem "capistrano"
+	gem "capistrano-ext"
 end
